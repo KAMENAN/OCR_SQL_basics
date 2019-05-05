@@ -50,13 +50,23 @@ SELECT last_name, first_name FROM employees;
 ### Question 2
 
 ```sql
-SELECT last_name, first_name, hire_date FROM employees WHERE (hire_date > "01-08-1999") ORDER BY hire_date DESC;
+SELECT last_name, first_name, hire_date FROM employees 
+WHERE (hire_date > "01-08-1999") 
+ORDER BY hire_date DESC;
 ```
 
 Note: la commande `ORDER BY hire_date DESC` permet d'ordonner les resultats de la requête.
 
 
-### Question 3
+### Question 3 (a tester!)
+
+Les deux tables ayant le schéma sont les tables: `dept_emp` et `dept_manager`
+
+```sql
+SELECT emp_no, dept_no, from_date, to_date FROM dept_emp
+UNION
+SELECT emp_no, dept_no, from_date, to_date FROM dept_manager;
+```
 
 ### Question 4
 
