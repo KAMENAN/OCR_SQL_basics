@@ -35,3 +35,31 @@ Pour chaque question, vous fournirez la requête SQL vous ayant permis d'obtenir 
  4. Afficher les différents salaires qu'a eu l'employé dont l'identifiant est **499593** grâce à une jointure.
  5. Grâce à une jointure, produisez une table indiquant le ou les départements dans lesquels a travaillé l'employé dont l'identifiant est **499902** (la table doit contenir également les dates de début et de fin d'embauche dans chacun des départements). 
  6. En utilisant une agrégation, trouver combien de personnes ont pour nom de famille "Gewali" (le nom de famille est donné dans la colonne *last_name* de la table *"employees"*).
+
+ 
+## Réponses
+
+### Question 1
+
+Pour afficher les lignes de la table *employees*, on utilise la commande `SELECT` de la facon suivante
+
+```sql
+SELECT last_name, first_name FROM employees;
+```
+
+### Question 2
+
+```sql
+SELECT last_name, first_name, hire_date FROM employees WHERE (hire_date > "01-08-1999") ORDER BY hire_date DESC;
+```
+
+Note: la commande `ORDER BY hire_date DESC` permet d'ordonner les resultats de la requête.
+
+
+### Question 3
+
+### Question 4
+
+### Question 5
+
+### Question 6
