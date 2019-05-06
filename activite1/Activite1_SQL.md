@@ -1,4 +1,4 @@
-# Activité: Recherchez des données à l'aide de requétes SQL
+# Activité: Recherchez des données à l'aide de requêtes SQL
 
 ## Objectifs
 
@@ -8,12 +8,13 @@ La base de données modélise une entreprise, dans laquelle des personnes sont e
 ## Contexte
 
 Elle contient 6 tables :
- - *employees* : les employés
- - *titles* : le titre sous lequel un employé est embauché
- - *salaries* : les salaires des employés
- - *departements* : les départements de l'entreprise
- - *dept_manager* : les managers (chefs) de départements
- - *dept_emp* : les employés associés à un département donné
+
+- *employees* : les employés
+- *titles* : le titre sous lequel un employé est embauché
+- *salaries* : les salaires des employés
+- *departements* : les départements de l'entreprise
+- *dept_manager* : les managers (chefs) de départements
+- *dept_emp* : les employés associés à un département donné
 
 Ces tables sont résumées dans ce schéma :
 
