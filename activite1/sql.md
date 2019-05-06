@@ -1,66 +1,76 @@
-# Activité: Recherchez des données à l'aide de requêtes SQL
+# ActivitÃ©: Recherchez des donnÃ©es Ã  l'aide de requÃ©tes SQL
 
 ## Objectifs
 
-Le but de cette activité est de rédiger des requêtes sur une base de données afin de répondre à des questions.
-La base de données modélise une entreprise, dans laquelle des personnes sont employées dans différents départements.
+Le but de cette activitÃ© est de rÃ©diger des requÃªtes sur une base de donnÃ©es afin de rÃ©pondre Ã  des questions.
+La base de donnÃ©es modÃ©lise une entreprise, dans laquelle des personnes sont employÃ©es dans diffÃ©rents dÃ©partements.
 
 ## Contexte
 
 Elle contient 6 tables :
- - *employees* : les employés
- - *titles* : le titre sous lequel un employé est embauché
- - *salaries* : les salaires des employés
- - *departements* : les départements de l'entreprise
- - *dept_manager* : les managers (chefs) de départements
- - *dept_emp* : les employés associés à un département donné
+ - *employees* : les employÃ©s
+ - *titles* : le titre sous lequel un employÃ© est embauchÃ©
+ - *salaries* : les salaires des employÃ©s
+ - *departements* : les dÃ©partements de l'entreprise
+ - *dept_manager* : les managers (chefs) de dÃ©partements
+ - *dept_emp* : les employÃ©s associÃ©s Ã  un dÃ©partement donnÃ©
 
-Ces tables sont résumées dans ce schéma :
+Ces tables sont rÃ©sumÃ©es dans ce schÃ©ma :
 
-![Schéma de la base de données](employees-schema.png)
+![SchÃ©ma de la base de donnÃ©es](employees-schema.png)
 
 ## Consigne
 
-Vous accéderez à la base de données via cette console interactive.
+Vous accÃ©derez Ã  la base de donnÃ©es via cette console interactive.
 
-Il est conseillé de garder une copie des requêtes que vous rédigez sur votre ordinateur, car la mémoire de la console interactive se réinitialise si la page web est rafraîchie.
+Il est conseillÃ© de garder une copie des requÃªtes que vous rÃ©digez sur votre ordinateur, car la mÃ©moire de la console interactive se rÃ©initialise si la page web est rafraichie.
 
-Pour chaque question, vous fournirez la requête SQL vous ayant permis d'obtenir le résultat, ainsi qu'une capture d'écran de la table renvoyée par votre requête. Si le résultat d'une requête contient beaucoup de ligne, seule une capture d'écran des premières lignes suffit.
+Pour chaque question, vous fournirez la requÃªte SQL vous ayant permis d'obtenir le rÃ©sultat, ainsi qu'une capture d'Ã©cran de la table renvoyÃ©e par votre requÃªte. Si le rÃ©sultat d'une requÃªte contient beaucoup de ligne, seule une capture d'Ã©cran des premiÃ¨res lignes suffit.
 
 ## Questions
 
- 1. Affichez toutes les lignes de la table *employees*, en n'affichant que les noms et prénoms des employés.
- 2. Afficher tous les employés ayant été embauché après le 1er aout 1999 (non compris).
- 3. Dans cette base de données, deux tables ont le même schéma. Réaliser leur union.
- 4. Afficher les différents salaires qu'a eu l'employé dont l'identifiant est **499593** grâce à une jointure.
- 5. Grâce à une jointure, produisez une table indiquant le ou les départements dans lesquels a travaillé l'employé dont l'identifiant est **499902** (la table doit contenir également les dates de début et de fin d'embauche dans chacun des départements). 
- 6. En utilisant une agrégation, trouver combien de personnes ont pour nom de famille "Gewali" (le nom de famille est donné dans la colonne *last_name* de la table *"employees"*).
+ 1. Affichez toutes les lignes de la table *employees*, en n'affichant que les noms et prÃ©noms des employÃ©s.
+ 2. Afficher tous les employÃ©s ayant Ã©tÃ© embauchÃ© aprÃ¨s le 1er aout 1999 (non compris).
+ 3. Dans cette base de donnÃ©es, deux tables ont le mÃªme schÃ©ma. RÃ©aliser leur union.
+ 4. Afficher les diffÃ©rents salaires qu'a eu l'employÃ© dont l'identifiant est **499593** grÃ¢ce Ã  une jointure.
+ 5. GrÃ¢ce Ã  une jointure, produisez une table indiquant le ou les dÃ©partements dans lesquels a travaillÃ© l'employÃ© dont l'identifiant est **499902** (la table doit contenir Ã©galement les dates de dÃ©but et de fin d'embauche dans chacun des dÃ©partements). 
+ 6. En utilisant une agrÃ©gation, trouver combien de personnes ont pour nom de famille "Gewali" (le nom de famille est donnÃ© dans la colonne *last_name* de la table *"employees"*).
 
  
-## Réponses
+## RÃ©ponses
 
 ### Question 1
 
-Pour afficher les lignes de la table *employees*, on utilise la commande `SELECT` de la facon suivante
+Pour afficher les lignes de la table *employees*, on utilise la commande `SELECT` de la facon suivante:
 
 ```sql
 SELECT last_name, first_name FROM employees;
 ```
 
+La requÃªte donne le rÃ©sultat suivant:
+
+![RÃ©sultat de la question 1.](question1_crop.PNG)
+
 ### Question 2
+
+Pour afficher tous les employÃ©s ayant Ã©tÃ© embauchÃ© aprÃ¨s le 1er aout 1999:
 
 ```sql
 SELECT last_name, first_name, hire_date FROM employees 
-WHERE (hire_date > "01-08-1999") 
-ORDER BY hire_date DESC;
+WHERE (hire_date > "1999-08-01") 
+ORDER BY hire_date ASC;
 ```
 
-Note: la commande `ORDER BY hire_date DESC` permet d'ordonner les resultats de la requête.
+La requÃªte donne le rÃ©sultat suivant:
+
+![RÃ©sultat de la question 2.](question2.PNG)
+
+Note: la commande `ORDER BY hire_date ASC` permet d'ordonner les resultats de la requÃªte.
 
 
-### Question 3 (a tester!)
+### Question 3
 
-Les deux tables ayant le schéma sont les tables: `dept_emp` et `dept_manager`
+Les deux tables ayant le schÃ©ma sont les tables: `dept_emp` et `dept_manager`
 
 ```sql
 SELECT emp_no, dept_no, from_date, to_date FROM dept_emp
@@ -68,8 +78,62 @@ UNION
 SELECT emp_no, dept_no, from_date, to_date FROM dept_manager;
 ```
 
+La requÃªte donne le rÃ©sultat suivant:
+
+![RÃ©sultat de la question 3.](question3_crop.PNG)
+
 ### Question 4
+
+```sql
+SELECT e.first_name, e.last_name, e.emp_no, s.salary FROM employees e 
+JOIN salaries s
+ON (e.emp_no = s.emp_no) AND (e.emp_no = 499593);
+```
+
+La requÃªte donne le rÃ©sultat suivant:
+
+![RÃ©sultat de la question 4.](question4_crop.PNG)
 
 ### Question 5
 
+```sql
+SELECT    
+    e.first_name,
+    e.last_name,
+    d.dept_name,
+    de.from_date,
+    de.to_date
+FROM 
+    employees e,
+    dept_emp de,
+    departments d
+WHERE
+    e.emp_no = de.emp_no
+    AND de.dept_no = d.dept_no
+    AND e.emp_no = 499902 ;
+```
+
+La requÃªte donne le rÃ©sultat suivant:
+
+![RÃ©sultat de la question 5.](question5.PNG)
+
 ### Question 6
+
+```sql
+SELECT * FROM 
+  (SELECT last_name, COUNT(*) 
+   FROM employees 
+   GROUP BY last_name) t
+WHERE t.last_name="Gewali";
+```
+
+La requÃªte donne le rÃ©sultat suivant:
+
+![RÃ©sultat de la question 6.](question6.PNG)
+
+Notons qu'on peut obtenir un rÃ©sultat identique plus simplement ... mais sans agrÃ©gation avec la requÃªte suivante:
+
+```sql
+SELECT last_name, COUNT(*) FROM employees
+WHERE last_name = "Gewali";
+```
