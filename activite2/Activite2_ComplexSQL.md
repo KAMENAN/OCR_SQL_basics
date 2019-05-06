@@ -13,10 +13,9 @@ Elle contient 6 tables :
 - dept_manager : les managers (chefs) de départements
 - dept_emp : les employés associés à un département donné
 
-
 Ces tables sont résumées dans ce schéma :
 
-![schéma]()
+![Schéma de la base de données](employees-schema.png)
 
 ## Consigne
 
@@ -28,8 +27,8 @@ Pour chaque question, vous fournirez la requête SQL vous ayant permis d'obtenir
 
 ## Questions
 
-1. Sans utiliser de requêtes imbriquées, produire une table indiquant les noms de famille portés par plus de 200 employés (le nom de famille est donné dans la colonne last_name de employees).
-2. En utilisant le mot clé `IN` ainsi qu'une requête imbriquée, donner les différents montants des salaires des employés embauchés après (strictement) la date du '1999-08-20'.
+1. Sans utiliser de requêtes imbriquées, produire une table indiquant les noms de famille portés par plus de 200 employés (le nom de famille est donné dans la colonne *last_name* de *employees*).
+2. En utilisant le mot clé `IN` ainsi qu'une requête imbriquée, donner les différents montants des salaires des employés embauchés après (strictement) la date du *'1999-08-20'*.
 3. Afficher uniquement les 5 salariés les plus agés, en affichant telles quelles toutes les colonnes de la table employees. 
 4. Afficher les salariés dont le nom de famille a pour 2ème lettre un "s", en affichant telles quelles toutes les colonnes de la table *employees*.
 Utiliser le mot clé `LIKE`.
@@ -38,7 +37,7 @@ Utiliser le mot clé `LIKE`.
 
 ### Question 1
 
-Sans utiliser de requêtes imbriquées, produire une table indiquant les noms de famille portés par plus de 200 employés (le nom de famille est donné dans la colonne last_name de employees).
+Sans utiliser de requêtes imbriquées, produire une table indiquant les noms de famille portés par plus de 200 employés (le nom de famille est donné dans la colonne *last_name* de *employees*).
  
 ```sql
 SELECT
@@ -49,6 +48,8 @@ GROUP BY
   last_name
 HAVING COUNT(*) > 200;
 ```
+
+Le résultat de cette requête est le suivant:
 
 ![Question 1.](question1.PNG)
 
@@ -67,6 +68,8 @@ WHERE emp_no IN (
   );
 ```
 
+Le résultat de cette requête est le suivant:
+
 ![Question 2.](question2.PNG)
 
 ### Question 3
@@ -80,6 +83,8 @@ ORDER BY birth_date ASC
 LIMIT 5;
 ```
 
+Le résultat de cette requête est le suivant:
+
 ![Question 3.](question3.PNG)
 
 ### Question 4
@@ -92,5 +97,7 @@ SELECT *
 FROM employees
 WHERE lower(last_name) LIKE "_s%";
 ```
+
+Le résultat de cette requête est le suivant:
 
 ![Question 4.](question4.PNG)
